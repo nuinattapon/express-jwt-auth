@@ -1,5 +1,5 @@
 import { Request, Response, Application, Express } from 'express'
-import verify from '../routes/verifyToken'
+import verify from './verifyToken'
 
 const router = (app: Express) => {
   app.route('/api/posts').post(verify, async (req: Request, res: Response) => {

@@ -50,7 +50,7 @@ dotenv.config()
   authRoute(app)
   postRoute(app)
 
-  const PORT = process.env.PORT || 3000
+  const PORT = +(process.env.PORT || 3000)
   app.listen(PORT, () => {
     console.log(`NODE_ENV=${process.env.NODE_ENV}`)
     console.log(`Express server started on port ${PORT}`)
