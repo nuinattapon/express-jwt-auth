@@ -19,5 +19,5 @@ Content-Type: application/json; charset=utf-8
 
 ###
 POST http://localhost:3000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjE1NWEyZmIyMjE4MzQyMjg4MjYxYzEiLCJpYXQiOjE1OTUyMzQ4NzgsImV4cCI6MTU5NTIzNTE3OH0.x_lBai2Zpe-YNyecUqZyEaidJ7Z1ZSBuwuGuJkObaCmUgVvdtczJygJk4oyNucidcT1R9Qwh7mgmJoTSWTGE_w
 Content-Type: application/json; charset=utf-8
-Authorization: Bearer eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjE1NDhlYTJlOGU4OTQxZjQxOGY0NzQiLCJpYXQiOjE1OTUyMzA4ODMsImV4cCI6MTU5NTIzMTE4M30.9z9SVWt5BuJUso9MqogZ0eH5WbEEkCdwqktf3ONS5hJlhohovnyl6jlGpzr_W02C

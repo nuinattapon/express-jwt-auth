@@ -4,9 +4,8 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 
 import User, { IUser } from '../model/User'
-const JWT_SECRET_KEY = process.env.JWT_SECRETE_KEY
-  ? process.env.JWT_SECRETE_KEY
-  : 'secret'
+
+import { JWT_SECRET_KEY, NODE_ENV, MONGODB_URL } from '../config'
 
 console.log(`JWT_SECRET_KEY=${JWT_SECRET_KEY}`)
 
@@ -68,7 +67,7 @@ const router = (app: Express) => {
           // * Create and assign a token
           const token = jwt.sign({ _id: user._id }, JWT_SECRET_KEY, {
             expiresIn: '5m',
-            algorithm: 'HS384',
+            algorithm: 'HS512',
           })
           console.log(`Bearer ${token}`)
           res.header('Authorization', `Bearer ${token}`).send({ token })

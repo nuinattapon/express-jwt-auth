@@ -1,19 +1,17 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import dotenv from 'dotenv'
 import morgan from 'morgan'
 import rateLimit, { RateLimit } from 'express-rate-limit'
 import helmet from 'helmet'
+import { MONGODB_URL, NODE_ENV, PORT } from './config'
 
 import authRoute from './routes/auth'
 import postRoute from './routes/posts'
-// Configure dotenv
-dotenv.config()
+
+console.log(`NODE_ENV=${NODE_ENV}`)
+console.log(`MONGODB_URL=${MONGODB_URL}`)
 ;(async () => {
   const connectDB = async () => {
-    const MONGODB_URL: string = process.env.MONGODB_URL
-      ? process.env.MONGODB_URL
-      : 'mongodb://localhost/jwtAuth'
     // Connect to Mongoose
     const connection = await mongoose.connect(MONGODB_URL, {
       useNewUrlParser: true,
@@ -42,7 +40,8 @@ dotenv.config()
   app.use(express.urlencoded({ extended: true }))
   app.use(
     morgan(
-      ':method :url - :status - :response-time ms - :res[content-length] - Authorization: ":req[Authorization]"'
+      'tiny'
+      // ':method :url - :status - :response-time ms - :res[content-length] - Authorization: ":req[Authorization]"'
     )
   )
 
@@ -50,9 +49,7 @@ dotenv.config()
   authRoute(app)
   postRoute(app)
 
-  const PORT = +(process.env.PORT || 3000)
   app.listen(PORT, () => {
-    console.log(`NODE_ENV=${process.env.NODE_ENV}`)
     console.log(`Express server started on port ${PORT}`)
   })
 })()
