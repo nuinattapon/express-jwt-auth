@@ -7,6 +7,7 @@ import { MONGODB_URL, NODE_ENV, PORT } from './config'
 
 import authRoute from './routes/auth'
 import postRoute from './routes/posts'
+import { notFound, serverError } from './routes/error'
 
 console.log(`NODE_ENV=${NODE_ENV}`)
 console.log(`MONGODB_URL=${MONGODB_URL}`)
@@ -48,6 +49,9 @@ console.log(`MONGODB_URL=${MONGODB_URL}`)
   // Route Middlewares
   authRoute(app)
   postRoute(app)
+
+  app.use(notFound)
+  app.use(serverError)
 
   app.listen(PORT, () => {
     console.log(`Express server started on port ${PORT}`)
