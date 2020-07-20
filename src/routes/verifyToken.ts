@@ -8,7 +8,11 @@ interface IVerified {
 }
 import { JWT_SECRET_KEY } from '../config'
 
-export default function auth(req: Request, res: Response, next: NextFunction) {
+export default function verify(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
   // *FORMAT OF TOKEN
   // *Authorization: "Bearer <access_token>"
   // Get auth header value

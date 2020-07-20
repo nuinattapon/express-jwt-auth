@@ -66,7 +66,7 @@ const router = (app: Express) => {
         } else {
           // * Create and assign a token
           const token = jwt.sign({ _id: user._id }, JWT_SECRET_KEY, {
-            expiresIn: '5m',
+            expiresIn: '15m',
             algorithm: 'HS512',
           })
           console.log(`Bearer ${token}`)
