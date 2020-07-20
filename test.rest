@@ -1,0 +1,23 @@
+###
+POST http://localhost:3000/api/user/register
+Content-Type: application/json; charset=utf-8
+
+{
+  "name": "Kyle",
+  "email": "kyle@pm.me",
+  "password": "password"
+}
+
+###
+POST http://localhost:3000/api/user/login
+Content-Type: application/json; charset=utf-8
+
+{
+  "email": "kyle@pm.me",
+  "password": "password"
+}
+
+###
+POST http://localhost:3000/api/posts
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjE1NDhlYTJlOGU4OTQxZjQxOGY0NzQiLCJpYXQiOjE1OTUyMzA4ODMsImV4cCI6MTU5NTIzMTE4M30.9z9SVWt5BuJUso9MqogZ0eH5WbEEkCdwqktf3ONS5hJlhohovnyl6jlGpzr_W02C

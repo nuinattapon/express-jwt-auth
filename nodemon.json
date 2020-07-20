@@ -1,0 +1,9 @@
+{
+  "verbose": false,
+  "ignore": [".git", "node_modules"],
+  "watch": ["**/*"],
+  "signal": "SIGHUP",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
